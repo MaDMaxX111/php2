@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+
+#contentR
+{
+	background-color: #D3E9F9; /* Цвет фона элемента*/
+	border:thin #54985B solid; /* Выбор границ элемента*/
+	padding: 10px; /* Пространство внутри элемента*/ 
+	margin: auto; /* Пространство за пределами документа. В данном случае располагает по центру*/
+	margin-bottom: 10px; /* Отступ снизу элемента*/
+	margin-top: 10px; /* Отступ сверху элемента*/
+	text-align:justify; /* Расположение текста внутри элемента*/
+	width:90%; /* Ширина блока*/
+}
+
+
+.FormR input:required 
+{
+	background-color: lightyellow;
+}
+
+
+
+.FormR h1 
+{
+  margin-bottom: 0px;
+}
+
+.FormR p 
+{
+  margin-top: 0px;
+}
+
+.FormR fieldset 
+{
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.FormR legend 
+{
+  padding: 0px 3px;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.FormR label 
+{
+  width: 150px;
+  display: inline-block;
+  margin: 6px;
+  text-align:justify; /* Расположение текста внутри элемента*/
+}
+
+.FormR em 
+{
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+}
+
+.FormR input:focus 
+{
+  background: #eaeaea;
+}
+
+.FormR input, textarea 
+{
+  width: 249px;
+}
+
+.FormR textarea 
+{
+  height: 100px;
+}
+
+.FormR select 
+{
+  width: 254px;
+  
+}
+
+.FormR input[type=checkbox] 
+{
+  width: 30px;
+
+}
+
+.FormR input[type=submit] 
+{
+  width: 170px;
+  padding: 10px;
+}
