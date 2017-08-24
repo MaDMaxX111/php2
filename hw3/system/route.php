@@ -3,7 +3,7 @@ class Route {
 	const HOME = 'home';
 	static $count;
 	
-	static function start($url) {
+	static function start($url = '') {
 
 		$url = array_pop(explode('/', $url));
 

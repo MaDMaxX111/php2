@@ -1,33 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Галлерея</title>
-</head>
-<body>
+{% include 'header.twig' %}
 <div class="wrap_form">
-    <form enctype="multipart/form-data" action="index.php" method="post">
+    <form enctype="multipart/form-data" action="loadImage" method="post">
         <input type="file" name="new_file" value=""/>
         <input type="submit" name="load_file" value="Отправить файл"/>
-        <input hidden type="text" name="redirect" value="<?echo $_SERVER['SCRIPT_NAME'];?>"/>
     </form>
 </div>
 <div class="wrap clear_fix">
     <ul>
-        <?php foreach ($files as $file) { ?>
+        {% for picture in pictures %}
         <li>
-            <a href="view.php?file_id=<?php echo $file['id']?>" target="_blank" style="background-image: url('<?php echo DIR_CACHE .'/'. $file['file']?>');"></a>
-            <div><span><?php echo $file['date']?></span><br><span> Просмотров: <?php echo $file['review']?></span></div>
+            <a href="{{ picture.href }}" target="_blank" style="background-image: url('{{ picture.thumb }}');"></a>
+            <div><span>{{ picture.date }}</span><br><span> Просмотров: {{ picture.review }}</span></div>
         </li>
-        <?php } ?>
+        {% endfor %}
     </ul>
 </div>
-<?php }
-?>
-
-</body>
-</html>
+{% include 'footer.twig' %}

@@ -3,9 +3,9 @@ class DB {
 
 	private $connection;
 
-	public function __construct($hostname, $username, $password, $database, $port = '3306') {
+	public function __construct() {
 
-		$this->connection = new mysqli($hostname, $username, $password, $database, $port);
+		$this->connection = new mysqli(HOST, USER, PASS, DB, DB_PORT);
 
 		if ($this->connection->connect_error) {
 			throw new \Exception('Error: ' . $this->connection->error . '<br />Error No: ' . $this->connection->errno);
@@ -20,15 +20,16 @@ class DB {
 
 			$data = array();
 
-			if ($query) {
+			if ($query->num_rows) {
 
 				while ($row = $query->fetch_assoc()) {
 					$data[] = $row;
 				}
 
+				$query->close();
+
 			}
 
-			$query->close();
 			return $data;
 
 		}

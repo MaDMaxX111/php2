@@ -10,8 +10,9 @@
 
 require_once 'config.php';
 require_once 'system' . DIRECTORY_SEPARATOR . 'route.php';
+require_once 'system' . DIRECTORY_SEPARATOR . 'model.php';
 require_once 'system' . DIRECTORY_SEPARATOR . 'view.php';
-//require_once  'class' . DIRECTORY_SEPARATOR . 'db.php';
+require_once 'system' . DIRECTORY_SEPARATOR . 'db.php';
 
 
 Route::start($_SERVER['REQUEST_URI']);
