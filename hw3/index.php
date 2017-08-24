@@ -8,17 +8,20 @@
 (со звёздочкой) Реализовать хранение ссылок и информации по картинкам в БД
 */
 
-if (is_file('config.php')) {
-	require_once('config.php');
-}
+require_once 'config.php';
+require_once 'system' . DIRECTORY_SEPARATOR . 'route.php';
+require_once 'system' . DIRECTORY_SEPARATOR . 'view.php';
+//require_once  'class' . DIRECTORY_SEPARATOR . 'db.php';
 
-require_once  'class' . DIRECTORY_SEPARATOR . 'Db.php';
 
-$db = new DB(HOST, USER, PASS, DB);
-$qr = $db->query("select * from image");
+Route::start($_SERVER['REQUEST_URI']);
 
-echo '<pre>';
-print_r($qr);
+
+//$db = new DB(HOST, USER, PASS, DB);
+//$qr = $db->query("select * from image");
+//
+//echo '<pre>';
+//print_r($qr);
 
 
 
