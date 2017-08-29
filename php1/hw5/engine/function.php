@@ -157,19 +157,26 @@ function sql_insert($sql)
 //функция уменьшения картинки
 function imageresize($outfile,$infile,$neww=0, $quality=50) {
 
+	if (file_exists($infile)) {
 	$im = imagecreatefromjpeg($infile);
-	$k = $neww/imagesx($im);
-	if ($k > 1) $k =1;
+	$k = $neww / imagesx($im);
+	if ($k > 1) {
+		$k = 1;
+	}
 
-	$w=intval(imagesx($im)*$k);
-	$h=intval(imagesy($im)*$k);
+	$w = intval(imagesx($im) * $k);
+	$h = intval(imagesy($im) * $k);
 
-	$im1=imagecreatetruecolor($w,$h);
-	imagecopyresampled($im1,$im,0,0,0,0,$w,$h,imagesx($im),imagesy($im));
+	$im1 = imagecreatetruecolor($w, $h);
+	imagecopyresampled($im1, $im, 0, 0, 0, 0, $w, $h, imagesx($im), imagesy($im));
 
 	imagejpeg($im1, $outfile, $quality);
 	imagedestroy($im);
 	imagedestroy($im1);
-    return true;
+
+	return TRUE;
+	} else {
+		return false;
+	}
 }
 ?>
