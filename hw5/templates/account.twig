@@ -1,0 +1,11 @@
+{% include 'header.twig' %}
+<div class="row">
+<ul>
+    {% for page in last_pages %}
+    <li>
+        <a href="{{ page }}" class="category-link">{{ page}}</a>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+{% include 'footer.twig' %}
