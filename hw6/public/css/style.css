@@ -1,0 +1,55 @@
+.wrap {
+    width: 100%;
+}
+.wrap ul{
+    list-style-type: none;
+}
+.wrap li{
+    float: left;
+    width: 20%;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+.wrap a{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 75%;
+    background-size: cover;
+}
+
+.clear_fix:before,
+.clear_fix:after{
+    content: "";
+    display: table;
+}
+.clear_fix:after {
+    clear: both;
+}
+.wrap_form{
+    padding-left:40px;
+}
+.wrap_image img{
+    width: 50%;
+}
+textarea{
+    width: 50%;
+}
+.comment {
+    background: rgba(128, 128, 128, 0.19);
+    padding: 10px 10px;
+    margin: 20px 0;
+}
+.date {
+    text-align: right;
+}
+
+table {
+    width: 100%;
+}
+td {
+    padding-bottom: 10px;
+}
+thead {
+    font-weight: bold;
+}
