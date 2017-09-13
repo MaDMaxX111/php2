@@ -12,7 +12,7 @@
         <tbody>
         {% for good in goods %}
             <tr>
-                <td><a href="index.php?path=categories&action=good&id={{ good.id_good }}" link="{{ good.id_good }}" class="category-link">{{ good.name }}</a></td>
+                <td><a href="index.php?path=good&id={{ good.id_good }}" link="{{ good.id_good }}" class="category-link">{{ good.name }}</a></td>
                 <td><span>{{ good.price }}</span></td>
                 <td><span>{{ good.quantity }}</span></td>
                 <td><span>{{ good.total }}</span></td>
